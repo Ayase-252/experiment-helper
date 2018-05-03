@@ -2,17 +2,19 @@
 
 A class of experiment is defined here.
 """
+
+
 class Experiment:
     """Defines an experiment.
-    
+
     Raises:
         RuntimeError -- If the lengths of parameters are consistant.
-    
+
     """
 
     def __init__(self, parameters, experiment_code, result_processor):
         """Initialize a experiment
-        
+
         Arguments:
             parameters {dict} -- A dict contains parameters.
             experiment_code {callable} -- A callable object. It should 
@@ -24,7 +26,7 @@ class Experiment:
                                            of result. The return value will
                                            be collect by this object and
                                            can be accessed by look_results().
-        
+
         Raises:
             RuntimeError -- If the lengths of parameters are not consistant,
                             RuntimeError would be raised.
@@ -51,7 +53,7 @@ class Experiment:
             else:
                 for i, key_val_pair in enumerate(key_val_pairs):
                     parameter_dicts[i].update(key_val_pair)
-        
+
         for parameter_dict in parameter_dicts:
             res = self._run_experiment(**parameter_dict)
             processed_res = self._process_result(**res)
@@ -59,10 +61,9 @@ class Experiment:
 
     def look_results(self):
         """Look result
-        
+
         Returns:
             [list] -- [results of experiment in order of defined parameters.]
         """
 
         return self._results
-        

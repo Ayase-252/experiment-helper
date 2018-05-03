@@ -9,6 +9,7 @@
     "python.unitTest.unittestEnabled": true,
     "python.linting.ignorePatterns":[
         "**/test/**/*.py",
+        "**/test/*.py",
         "**/site-packages/**/*.py"
     ]
 }
