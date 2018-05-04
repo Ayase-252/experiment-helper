@@ -56,7 +56,7 @@ class Experiment:
 
         for parameter_dict in parameter_dicts:
             res = self._run_experiment(**parameter_dict)
-            processed_res = self._process_result(**res)
+            processed_res = self._process_result(parameter_dict, res)
             self._results.append(processed_res)
 
     def look_results(self):

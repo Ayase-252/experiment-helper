@@ -18,8 +18,8 @@ class TestExperiment(TestCase):
 
         # Result returned by do_experiment should be catch by the named
         # arguments in manipulate_result.
-        def manipulate_result(sum_):
-            return sum_ + 1
+        def manipulate_result(params, res):
+            return res['sum_'] + 1
 
         # The value returned by manipulated_result should be saved and be
         # able to be accessed by look_results() method.
